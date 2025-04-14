@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-2M9B1QETNK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-2M9B1QETNK');
+    </script>
+    <!-- Custom CAPTCHA Implementation -->
+    <script>
+        function initCaptcha() {
+            const captchaContainer = document.getElementById('captcha-container');
+            if (!captchaContainer) return;
+            
+            // Generate random string
+            const randomString = Math.random().toString(36).substring(2, 8).toUpperCase();
+            
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            canvas.width = 200;
+            canvas.height = 50;
+            const ctx = canvas.getContext('2d');
+            
+            // Draw background
+            ctx.fillStyle = '#f0f0f0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw text
+            ctx.font = '30px Arial';
+            ctx.fillStyle = '#333';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            
+            // Add noise
+            for (let i = 0; i < 50; i++) {
+                ctx.fillStyle = '#' + Math.floor(Math.random()*16777215).toString(16);
+                ctx.fillRect(Math.random() * canvas.width, Math.random() * canvas.height, 2, 2);
+            }
+            
+            // Draw the text with slight rotation for each character
+            for (let i = 0; i < randomString.length; i++) {
+                ctx.save();
+                ctx.translate(40 + i * 25, 25);
+                ctx.rotate((Math.random() - 0.5) * 0.4);
+                ctx.fillText(randomString[i], 0, 0);
+                ctx.restore();
+            }
+            
+            captchaContainer.innerHTML = '';
+            captchaContainer.appendChild(canvas);
+            
+            // Store the CAPTCHA text
+            window.captchaText = randomString;
+        }
+
+        // Initialize when DOM is loaded    
+        document.addEventListener('DOMContentLoaded', function() {
+            initCaptcha();
+        });
+    </script>
+    <title>Crazy Cattle 3D - Ultimate Goat Combat Simulation Game</title>
+    <meta name="description" content="Crazy Cattle 3D - The most exciting 3D goat simulation game where you control a powerful goat to launch others into space. Experience the best physics-based goat combat game ever created!">
+    <meta name="keywords" content="Crazy Cattle 3D, goat combat game, physics-based game, first-person goat game, goat simulation, 3D goat game, goat combat simulation, best goat game, goat physics game">
+    <meta name="author" content="crazycattle3d.com">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://crazycattle3d.com">
+    <meta property="og:title" content="Crazy Cattle 3D - Ultimate Goat Combat Simulation Game">
+    <meta property="og:description" content="Experience the most exciting 3D goat simulation game where you control a powerful goat to launch others into space. The best physics-based goat combat game ever created!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://crazycattle3d.com">
+    <meta property="og:image" content="https://crazycattle3d.com/images/crazy-cattle-3d-og.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Crazy Cattle 3D - Ultimate Goat Combat Simulation Game">
+    <meta name="twitter:description" content="Experience the most exciting 3D goat simulation game where you control a powerful goat to launch others into space. The best physics-based goat combat game ever created!">
+    <meta name="twitter:image" content="https://crazycattle3d.com/images/crazy-cattle-3d-twitter.jpg">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --apple-blue: #007aff;
+            --apple-green: #34c759;
+            --apple-indigo: #5856d6;
+            --apple-orange: #ff9500;
+            --apple-pink: #ff2d55;
+            --apple-purple: #af52de;
+            --apple-red: #ff3b30;
+            --apple-teal: #5ac8fa;
+            --apple-yellow: #ffcc00;
+            --apple-gray: #8e8e93;
+            --apple-bg: #f2f2f7;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: var(--apple-bg);
+        }
+        .content-container {
+            max-width: 1200px;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+        .game-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            width: 100%;
+        }
+        .game-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--apple-blue);
+            border-radius: 12px;
+        }
+        .apple-btn {
+            background-color: var(--apple-blue);
+            transition: all 0.3s ease;
+        }
+        .apple-btn:hover {
+            background-color: #0062cc;
+            transform: translateY(-2px);
+        }
+        .header-gradient {
+            background: linear-gradient(90deg, var(--apple-blue), var(--apple-purple));
+        }
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            .content-container {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+    </style>
+    <link rel="icon" type="image/png" href="/favicon.png">
+</head>
+<body>
+    <header class="header-gradient text-white py-6 shadow-lg">
+        <div class="container mx-auto content-container">
+            <nav class="flex justify-between items-center">
+                <a href="https://crazycattle3d.com" class="text-2xl font-bold">Crazy Cattle 3D</a>
+                <div class="hidden md:block">
+                    <a href="#game" class="ml-4 hover:text-yellow-200 transition">Play Now</a>
+                    <a href="#introduction" class="ml-4 hover:text-yellow-200 transition">Introduction</a>
+                    <a href="#tutorial" class="ml-4 hover:text-yellow-200 transition">Tutorial</a>
+                    <a href="#advanced" class="ml-4 hover:text-yellow-200 transition">Advanced Guide</a>
+                    <a href="#faq" class="ml-4 hover:text-yellow-200 transition">FAQ</a>
+                </div>
+                <button class="md:hidden focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto content-container py-8">
+        <section class="mb-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Play Crazy Cattle 3D - The Ultimate Goat Combat Experience!</h1>
+            <p class="text-xl text-gray-600 mb-8">Experience the most exciting 3D goat simulation game where you control a powerful goat to launch others into space!</p>
+            <a href="#game" class="apple-btn text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">Play Crazy Cattle 3D Now</a>
+        </section>
+
+        <section id="game" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 pl-3">Play Crazy Cattle 3D Online</h2>
+            <div class="game-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/3gPDBeX4ia8" 
+                    style="width: 100%; height: 100%;" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    title="Crazy Cattle 3D Game"
+                    loading="lazy">
+                </iframe>
+            </div>
+            <div class="mt-6 text-center">
+                <a href="https://4nn4t4t.itch.io/crazycattle3d/download/eyJpZCI6MzQ2NTA1NCwiZXhwaXJlcyI6MTc0NDYxMzUzNH0%3d.dKhkRu1H4HbnB9st%2bXmnHnxKdR4%3d" 
+                   class="apple-btn text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg inline-block">
+                    Go to Play
+                </a>
+            </div>
+        </section>
+
+        <section id="introduction" class="mb-16 bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Welcome to Crazy Cattle 3D</h2>
+            <div class="text-gray-700">
+                <p class="mb-4">Experience the ultimate goat combat simulation in Crazy Cattle 3D, where physics meets fun in the most entertaining way possible. As the leading goat combat game of 2024, we've created an immersive experience that will keep you coming back for more.</p>
+                <p class="mb-4">Crazy Cattle 3D is the most entertaining and addictive goat combat game ever created! With its unique first-person perspective and physics-based gameplay, Crazy Cattle 3D offers an unparalleled gaming experience that combines humor, action, and strategy in one exciting package.</p>
+            </div>
+        </section>
+
+        <section id="gameplay" class="mb-16 bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold mb-6">How to Play Crazy Cattle 3D</h2>
+            <div class="text-gray-700">
+                <p class="mb-4">In Crazy Cattle 3D, you take control of a powerful goat from a first-person perspective. Your mission is simple: charge into other goats and launch them into the sky! With our advanced physics engine, every collision is unique and satisfying, creating endless entertainment and hilarious moments.</p>
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl mb-3">Desktop Controls</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><span class="font-semibold">Movement:</span> Use arrow keys or WASD</li>
+                            <li><span class="font-semibold">Charge:</span> Hold left click or spacebar</li>
+                            <li><span class="font-semibold">Jump:</span> Press E key</li>
+                            <li><span class="font-semibold">Special Moves:</span> Press Q for special attacks</li>
+                        </ul>
+                    </div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h4 class="font-bold text-xl mb-3">Mobile Controls</h4>
+                        <ul class="space-y-2 text-gray-700">
+                            <li><span class="font-semibold">Movement:</span> Touch and drag to move</li>
+                            <li><span class="font-semibold">Charge:</span> Tap and hold the charge button</li>
+                            <li><span class="font-semibold">Jump:</span> Tap the jump button</li>
+                            <li><span class="font-semibold">Special Moves:</span> Tap the special move button</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tips" class="mb-16 bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Advanced Strategies</h2>
+            <div class="text-gray-700">
+                <ul class="space-y-4">
+                    <li>✓ Master the art of goat launching - aim for the perfect angle to send opponents flying</li>
+                    <li>✓ Perfect your charge timing - use it to escape danger or catch opponents off guard</li>
+                    <li>✓ Develop spatial awareness - always know where other goats are in Crazy Cattle 3D</li>
+                    <li>✓ Create strategic collisions - plan your attacks for maximum impact</li>
+                    <li>✓ Learn to read the arena - identify safe zones and danger areas</li>
+                    <li>✓ Time your special moves - use them at the most opportune moments</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="features" class="mb-16 bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Why Choose Crazy Cattle 3D?</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-blue-600">Innovative Gameplay</h3>
+                    <p class="text-gray-700">Experience a unique blend of physics-based combat with first-person goat action. Our innovative collision system creates endless entertainment and hilarious moments.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-green-600">Thriving Community</h3>
+                    <p class="text-gray-700">Join a vibrant community of Crazy Cattle 3D players. Participate in daily tournaments, share strategies, and compete for the top spots on our global leaderboards.</p>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-lg">
+                    <h3 class="text-xl font-bold mb-4 text-purple-600">Constant Evolution</h3>
+                    <p class="text-gray-700">Enjoy regular updates with new features, power-ups, and game modes. Our development team is constantly working to enhance your Crazy Cattle 3D experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="scoring" class="mb-16 bg-white p-8 rounded-xl shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Crazy Cattle 3D Scoring System</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Basic Scoring</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li>✓ Points for each goat launched in Crazy Cattle 3D</li>
+                        <li>✓ Combo multipliers for consecutive launches</li>
+                        <li>✓ Height bonuses for reaching new heights</li>
+                        <li>✓ Special move bonuses</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Scoring</h3>
+                    <ul class="space-y-4 text-gray-700">
+                        <li>✓ Chain combo multipliers</li>
+                        <li>✓ Style points for special moves</li>
+                        <li>✓ Achievement bonuses</li>
+                        <li>✓ Global ranking points</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="mb-16">
+            <h2 class="text-3xl font-bold mb-6">Crazy Cattle 3D FAQ</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">What is Crazy Cattle 3D?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Crazy Cattle 3D is an exciting first-person goat combat game where players control a powerful goat to launch others into space. The game features unique physics-based gameplay, combo systems, and increasingly challenging levels. Perfect for both casual gamers and competitive players!</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">How do I play Crazy Cattle 3D?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Playing Crazy Cattle 3D is easy to learn but challenging to master. Use arrow keys or WASD for movement, left click or spacebar for charging, and combine these controls to perform amazing launches. The goal is to launch as many goats as possible while collecting points and maintaining your combo streak. Our platform offers the best Crazy Cattle 3D experience with smooth controls and responsive gameplay.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">What are the best strategies for high scores?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">To achieve high scores in Crazy Cattle 3D, focus on maintaining combos, using strategic launches, and building momentum. The key is to chain multiple launches together without landing on the same goat twice. Advanced players can achieve massive scores through perfect combo timing and strategic attack choices. Whether you're aiming for the Crazy Cattle 3D world record or just want to improve your gameplay, our platform provides the perfect environment to practice.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">Is Crazy Cattle 3D free to play online?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Yes! Crazy Cattle 3D is completely free to play online at crazycattle3d.com. No downloads or installations required - just visit our website and start playing immediately. We offer the full game experience with all features available to everyone. Whether you're looking for Crazy Cattle 3D unblocked or the best Crazy Cattle 3D experience, you've found the right place.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">Can I play Crazy Cattle 3D on mobile devices?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Yes, Crazy Cattle 3D is fully optimized for both desktop and mobile devices. The touch controls are specially adapted for smartphones and tablets, providing smooth gameplay on any device. Play anywhere, anytime! Our platform ensures the best gaming experience across all devices, whether you're playing on a computer, tablet, or smartphone.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">What makes Crazy Cattle 3D different from other games?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Crazy Cattle 3D stands out with its unique first-person perspective, advanced physics engine, and endless goat launching challenge. Unlike other games, Crazy Cattle 3D combines skill-based gameplay with strategic thinking, making each session unique and exciting. Our platform offers the best Crazy Cattle 3D experience with smooth controls, responsive gameplay, and an active community of players.</p>
+                    </div>
+                </div>
+
+               <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">What are combo multipliers?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Combo multipliers in Crazy Cattle 3D increase your score by chaining consecutive launches without landing on the same goat twice. The higher your combo chain, the bigger your score multiplier becomes. Master combos to achieve record-breaking scores! Our platform offers the best Crazy Cattle 3D experience with a comprehensive scoring system that rewards skillful gameplay.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">Are there any special moves or tricks?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Yes! Crazy Cattle 3D features several special moves including the "Super Charge," "Aerial Assault," and "Combo Chain." Advanced players can combine these moves to create spectacular launching sequences and earn bonus points. Practice these moves to become a Crazy Cattle 3D master! Our platform offers the best Crazy Cattle 3D experience with a wide range of special moves and tricks to discover.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="faq-toggle w-full p-6 text-left focus:outline-none flex justify-between items-center" onclick="toggleFAQ(this)">
+                        <h3 class="font-bold text-xl">How do I compete with other players?</h3>
+                        <svg class="w-6 h-6 transform transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div class="faq-content p-6 pt-0 border-t border-gray-100">
+                        <p class="text-gray-700">Compete on our global leaderboards, participate in daily challenges, and join special events. Track your progress, compare scores with players worldwide, and aim for the top spots. Regular tournaments offer chances to prove your Crazy Cattle 3D skills! Our platform offers the best Crazy Cattle 3D experience with a comprehensive competitive system that rewards skillful gameplay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12 rounded-xl">
+            <h2 class="text-3xl font-bold mb-6">Ready to Play Crazy Cattle 3D?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Test your goat launching skills now and see if you have what it takes to master the ultimate goat combat challenge! Join the best gaming community at Crazy Cattle 3D!</p>
+            <a href="#game" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">Play Crazy Cattle 3D</a>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto content-container">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold mb-4">Crazy Cattle 3D</h2>
+                    <p class="text-gray-300">The most entertaining goat combat simulation game ever created!</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-3">Quick Links</h3>
+                    <ul>
+                        <li><a href="#game" class="text-gray-300 hover:text-white transition">Play Game</a></li>
+                        <li><a href="#introduction" class="text-gray-300 hover:text-white transition">Introduction</a></li>
+                        <li><a href="#tutorial" class="text-gray-300 hover:text-white transition">Tutorial</a></li>
+                        <li><a href="#advanced" class="text-gray-300 hover:text-white transition">Advanced Guide</a></li>
+                        <li><a href="#faq" class="text-gray-300 hover:text-white transition">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2024 crazycattle3d.com. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Initialize FAQ sections
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqContents = document.querySelectorAll('.faq-content');
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+            
+            // Hide all FAQ content initially
+            faqContents.forEach(content => {
+                content.style.display = 'none';
+            });
+            
+            // Show the first FAQ by default
+            if(faqContents.length > 0) {
+                faqContents[0].style.display = 'block';
+                faqToggles[0].classList.add('active');
+                faqToggles[0].querySelector('svg').classList.add('rotate-180');
+            }
+        });
+        
+        // Toggle FAQ content visibility
+        function toggleFAQ(element) {
+            const content = element.nextElementSibling;
+            const arrow = element.querySelector('svg');
+            
+            if (content.style.display === 'none' || content.style.display === '') {
+                content.style.display = 'block';
+                arrow.classList.add('rotate-180');
+                element.classList.add('active');
+            } else {
+                content.style.display = 'none';
+                arrow.classList.remove('rotate-180');
+                element.classList.remove('active');
+            }
+        }
+    </script>
+    <div id="captcha-container" class="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg" style="display: none;">
+        <div class="mb-4">
+            <label class="block text-sm font-medium text-gray-700">Please verify you're human</label>
+            <div class="mt-2" id="captcha-image"></div>
+        </div>
+        <div class="mb-4">
+            <input type="text" id="captcha-input" class="w-full px-3 py-2 border border-gray-300 rounded-md" placeholder="Enter the text above">
+        </div>
+        <button onclick="verifyCaptcha()" class="w-full bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700">Verify</button>
+    </div>
+    <script>
+        function verifyCaptcha() {
+            const input = document.getElementById('captcha-input').value.toUpperCase();
+            if (input === window.captchaText) {
+                document.getElementById('captcha-container').style.display = 'none';
+                // Add your success callback here
+            } else {
+                alert('Incorrect CAPTCHA. Please try again.');
+                initCaptcha();
+            }
+        }
+    </script>
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const gameFrame = document.getElementById('game-frame');
+                if (gameFrame) {
+                    gameFrame.innerHTML = `<iframe 
+                        src="https://www.youtube.com/embed/3gPDBeX4ia8" 
+                        style="width: 100%; height: 100%;" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        title="Crazy Cattle 3D Game"
+                        loading="lazy"></iframe>`;
+                }
+            }, 1500);
+        });
+    </script>
+</body>
+</html> 

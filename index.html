@@ -184,13 +184,11 @@
             <h2 class="text-3xl font-bold mb-6 text-gray-800 pl-3">Play Crazy Cattle 3D Online</h2>
             <div class="game-container">
                 <iframe 
-                    id="game-frame"
                     src="https://gn-math.github.io/?id=164" 
-                    style="width: 100%; height: 100%;" 
+                    width="100%" 
+                    height="600" 
                     frameborder="0" 
-                    allow="autoplay; fullscreen; microphone; gamepad; keyboard; mouse; touch-screen;"
-                    title="Crazy Cattle 3D Game"
-                    loading="lazy">
+                    allowfullscreen>
                 </iframe>
             </div>
             
@@ -220,6 +218,15 @@
                         loading="lazy">
                     </iframe>
                 </div>
+            </div>
+            
+            <div class="mt-8 text-center">
+                <a href="https://4nn4t4t.itch.io/crazycattle3d" 
+                   class="apple-btn text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg inline-block mx-auto"
+                   style="display: block; max-width: 300px; margin-left: auto; margin-right: auto;"
+                   target="_blank" rel="noopener noreferrer">
+                    Crazy Cattle 3D Download
+                </a>
             </div>
         </section>
 
@@ -321,7 +328,7 @@
                         </svg>
                     </button>
                     <div class="faq-content p-6 pt-0 border-t border-gray-100">
-                        <p class="text-gray-700">Downloading Crazy Cattle 3D is simple and straightforward. Just click on the blue "Download CrazyCattle 3D" button at the top of this page in the game section. The download process will start automatically, and you'll be playing the game in no time. We've optimized the download size to ensure you can get into the action quickly without waiting for large files to download. No additional software or special requirements are needed to enjoy the full Crazy Cattle 3D experience.</p>
+                        <p class="text-gray-700">Downloading Crazy Cattle 3D is simple and straightforward. Just click on the blue "crazy cattle 3d download" button at the top of this page in the game section. The download process will start automatically, and you'll be playing the game in no time. We've optimized the download size to ensure you can get into the action quickly without waiting for large files to download. No additional software or special requirements are needed to enjoy the full Crazy Cattle 3D experience.</p>
                     </div>
                 </div>
 
@@ -518,7 +525,7 @@
             console.log("Game iframe loaded");
             
             // Ensure the game iframe has appropriate permissions
-            const gameFrame = document.getElementById('game-frame');
+            const gameFrame = document.querySelector('.game-container iframe');
             if (gameFrame) {
                 gameFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation');
                 console.log("Game frame permissions updated");

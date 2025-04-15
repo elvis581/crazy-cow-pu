@@ -184,19 +184,42 @@
             <h2 class="text-3xl font-bold mb-6 text-gray-800 pl-3">Play Crazy Cattle 3D Online</h2>
             <div class="game-container">
                 <iframe 
-                    src="https://www.youtube.com/embed/3gPDBeX4ia8" 
+                    id="game-frame"
+                    src="https://gn-math.github.io/?id=164" 
                     style="width: 100%; height: 100%;" 
                     frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allow="autoplay; fullscreen; microphone; gamepad; keyboard; mouse; touch-screen;"
                     title="Crazy Cattle 3D Game"
                     loading="lazy">
                 </iframe>
             </div>
-            <div class="mt-6 text-center">
-                <a href="https://4nn4t4t.itch.io/crazycattle3d/download/eyJpZCI6MzQ2NTA1NCwiZXhwaXJlcyI6MTc0NDYxMzUzNH0%3d.dKhkRu1H4HbnB9st%2bXmnHnxKdR4%3d" 
-                   class="apple-btn text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg inline-block">
-                    Download
-                </a>
+            
+            <h2 class="text-3xl font-bold mt-12 mb-6 text-gray-800 pl-3">Game Videos</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="game-container">
+                    <iframe 
+                        id="video-frame-1"
+                        src="https://www.youtube.com/embed/3gPDBeX4ia8" 
+                        style="width: 100%; height: 100%;" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        title="Crazy Cattle 3D Gameplay Video 1"
+                        loading="lazy">
+                    </iframe>
+                </div>
+                <div class="game-container">
+                    <iframe 
+                        id="video-frame-2"
+                        src="https://www.youtube.com/embed/qYF-efFnx9A" 
+                        style="width: 100%; height: 100%;" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                        title="Crazy Cattle 3D Gameplay Video 2"
+                        loading="lazy">
+                    </iframe>
+                </div>
             </div>
         </section>
 
@@ -490,18 +513,28 @@
     </script>
     <script>
         window.addEventListener('load', function() {
-            setTimeout(function() {
-                const gameFrame = document.getElementById('game-frame');
-                if (gameFrame) {
-                    gameFrame.innerHTML = `<iframe 
-                        src="https://www.youtube.com/embed/3gPDBeX4ia8" 
-                        style="width: 100%; height: 100%;" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        title="Crazy Cattle 3D Game"
-                        loading="lazy"></iframe>`;
-                }
-            }, 1500);
+            // The game iframe is now directly loaded rather than being replaced with a YouTube video
+            // We can add any game-specific initialization here if needed
+            console.log("Game iframe loaded");
+            
+            // Ensure the game iframe has appropriate permissions
+            const gameFrame = document.getElementById('game-frame');
+            if (gameFrame) {
+                gameFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation');
+                console.log("Game frame permissions updated");
+            }
+            
+            // Ensure video iframes have appropriate permissions
+            const videoFrame1 = document.getElementById('video-frame-1');
+            const videoFrame2 = document.getElementById('video-frame-2');
+            if (videoFrame1) {
+                videoFrame1.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation');
+                console.log("Video frame 1 permissions updated");
+            }
+            if (videoFrame2) {
+                videoFrame2.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation');
+                console.log("Video frame 2 permissions updated");
+            }
         });
     </script>
 </body>

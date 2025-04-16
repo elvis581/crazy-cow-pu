@@ -69,8 +69,8 @@
         });
     </script>
     <title>Crazy Cattle 3D - Play Crazycattle 3D Battle Royale Game | Ultimate Crazy Cattle Gaming Experience</title>
-    <meta name="description" content="Crazy Cattle 3D - the most exciting sheep battle royale game where you control cattle to outmaneuver opponents. Experience the best physics-based Crazycattle 3D game ever created! Play Crazy Cattle 3D now!">
-    <meta name="keywords" content="Crazy Cattle 3D download, CrazyCattle 3D, Crazy Cattle, sheep battle royale, physics-based game, sheep combat game, sheep simulation, 3D sheep game, sheep combat simulation, best sheep game, sheep physics game, crazy cattle 3d free">
+    <meta name="description" content="Crazy Cattle 3D - the most exciting sheep battle royale game where you control cattle to outmaneuver opponents. Play Crazy Cattle 3D online, enjoy Crazy Cattle 3D unblocked, and experience the best physics-based Crazycattle 3D game ever created! Crazy Cattle 3D free to play now!">
+    <meta name="keywords" content="Crazy Cattle 3D download, CrazyCattle 3D, Crazy Cattle, sheep battle royale, physics-based game, sheep combat game, sheep simulation, 3D sheep game, sheep combat simulation, best sheep game, sheep physics game, crazy cattle 3d free, crazy cattle 3d online, crazy cattle 3d unblocked">
     <meta name="author" content="crazycattle3d.org">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://crazycattle3d.org">
@@ -176,20 +176,23 @@
     <main class="container mx-auto content-container py-8">
         <section class="mb-16 text-center">
             <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Crazy Cattle 3D: The Ultimate Sheep Battle Royale Experience</h1>
-            <p class="text-xl text-gray-600 mb-8">Welcome to CrazyCattle 3D - the most unique Crazy Cattle survival challenge in gaming today! Put yourself in control of an explosive sheep in a frantic quest to be the last woolly warrior standing.</p>
+            <p class="text-xl text-gray-600 mb-8">Welcome to CrazyCattle 3D - the most unique Crazy Cattle survival challenge in gaming today! Play Crazy Cattle 3D online and unblocked for free directly in your browser. Put yourself in control of an explosive sheep in a frantic quest to be the last woolly warrior standing.</p>
             <a href="#game" class="apple-btn text-white font-bold py-3 px-8 rounded-full text-lg shadow-lg">Play Crazy Cattle 3D Now</a>
         </section>
 
         <section id="game" class="mb-16">
-            <h2 class="text-3xl font-bold mb-6 text-gray-800 pl-3">Play Crazy Cattle 3D Online</h2>
+            <h2 class="text-3xl font-bold mb-6 text-gray-800 pl-3">Play Crazy Cattle 3D Online Unblocked & Free</h2>
             <div class="game-container">
-                <iframe 
-                    src="https://gn-math.github.io/?id=164" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
+                <iframe id="gameFrame" 
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:2px solid var(--apple-blue); border-radius:12px;" 
                     allowfullscreen>
                 </iframe>
+            </div>
+            
+            <div class="mt-4 mb-8 text-center">
+                <button onclick="toggleFullscreen()" class="apple-btn text-white font-bold py-2 px-4 rounded-full text-md shadow-lg">
+                    Play in Fullscreen
+                </button>
             </div>
             
             <h2 class="text-3xl font-bold mt-12 mb-6 text-gray-800 pl-3">Game Videos</h2>
@@ -376,7 +379,7 @@
                         </svg>
                     </button>
                     <div class="faq-content p-6 pt-0 border-t border-gray-100">
-                        <p class="text-gray-700">Yes! Crazy Cattle 3D is completely free to play online at crazycattle3d.org. No downloads or installations required - just visit our website and start playing immediately. We offer the full game experience with all features available to everyone. Whether you're looking for Crazy Cattle 3D unblocked or the best Crazy Cattle 3D experience, you've found the right place.</p>
+                        <p class="text-gray-700">Yes! Crazy Cattle 3D is completely free to play online at crazycattle3d.org. We offer Crazy Cattle 3D unblocked so you can enjoy it anywhere - at school, work, or home without restrictions. Play Crazy Cattle 3D online directly in your browser with no downloads or installations required. We offer the full Crazy Cattle 3D free experience with all features available to everyone. Whether you're looking for the best Crazy Cattle 3D unblocked gameplay or the most entertaining Crazy Cattle 3D online experience, you've found the right place.</p>
                     </div>
                 </div>
 
@@ -431,8 +434,8 @@
         </section>
 
         <section class="mb-16 text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-12 rounded-xl">
-            <h2 class="text-3xl font-bold mb-6">Ready to Play Crazy Cattle 3D?</h2>
-            <p class="text-xl mb-8 max-w-2xl mx-auto">Test your CrazyCattle 3D sheep combat skills now and see if you have what it takes to master the ultimate Crazy Cattle battle royale challenge! Join the best gaming community at Crazy Cattle 3D!</p>
+            <h2 class="text-3xl font-bold mb-6">Ready to Play Crazy Cattle 3D Free Online?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Test your CrazyCattle 3D sheep combat skills now! Play Crazy Cattle 3D unblocked and see if you have what it takes to master the ultimate Crazy Cattle 3D online battle royale challenge! Join the best gaming community at Crazy Cattle 3D!</p>
             <a href="#game" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:bg-gray-100 transition transform hover:-translate-y-1">Play Crazy Cattle 3D</a>
         </section>
     </main>
@@ -456,14 +459,15 @@
                 </div>
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-gray-400">
-                <p>&copy; 2024 crazycattle3d.org. All rights reserved.</p>
+                <p>&copy; 2024 crazycattle3d.org - Play Crazy Cattle 3D online, unblocked & free. All rights reserved.</p>
             </div>
         </div>
     </footer>
     
     <script>
-        // Initialize FAQ sections
+        // Initialize FAQ sections and Game
         document.addEventListener('DOMContentLoaded', function() {
+            // Handle FAQ sections
             const faqContents = document.querySelectorAll('.faq-content');
             const faqToggles = document.querySelectorAll('.faq-toggle');
             
@@ -478,6 +482,9 @@
                 faqToggles[0].classList.add('active');
                 faqToggles[0].querySelector('svg').classList.add('rotate-180');
             }
+            
+            // Initialize game loading
+            loadGame();
         });
         
         // Toggle FAQ content visibility
@@ -496,6 +503,52 @@
             }
         }
     </script>
+    
+    <!-- Game Loading Script -->
+    <script>
+        const zonesURL = "https://cdn.jsdelivr.net/gh/gn-math/assets@main/zones.json";
+        const coverURL = "https://cdn.jsdelivr.net/gh/gn-math/covers@main";
+        const htmlURL = "https://cdn.jsdelivr.net/gh/gn-math/html@main";
+        const gameId = 164; // Crazy Cattle 3D ID
+        
+        async function loadGame() {
+            try {
+                const response = await fetch(zonesURL);
+                const zones = await response.json();
+                const gameData = zones.find(zone => zone.id === gameId);
+                
+                if (gameData) {
+                    const url = gameData.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
+                    const gameFrame = document.getElementById('gameFrame');
+                    
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(html => {
+                            gameFrame.contentDocument.open();
+                            gameFrame.contentDocument.write(html);
+                            gameFrame.contentDocument.close();
+                        })
+                        .catch(error => console.error("Failed to load game:", error));
+                }
+            } catch (error) {
+                console.error("Error loading game:", error);
+            }
+        }
+        
+        function toggleFullscreen() {
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.mozRequestFullScreen) {
+                gameFrame.mozRequestFullScreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
+        }
+    </script>
+    
     <div id="captcha-container" class="fixed bottom-4 right-4 bg-white p-4 rounded-lg shadow-lg" style="display: none;">
         <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700">Please verify you're human</label>
@@ -520,12 +573,8 @@
     </script>
     <script>
         window.addEventListener('load', function() {
-            // The game iframe is now directly loaded rather than being replaced with a YouTube video
-            // We can add any game-specific initialization here if needed
-            console.log("Game iframe loaded");
-            
             // Ensure the game iframe has appropriate permissions
-            const gameFrame = document.querySelector('.game-container iframe');
+            const gameFrame = document.getElementById('gameFrame');
             if (gameFrame) {
                 gameFrame.setAttribute('sandbox', 'allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation');
                 console.log("Game frame permissions updated");

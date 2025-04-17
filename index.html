@@ -191,12 +191,6 @@
                 </iframe>
             </div>
             
-            <div class="mt-4 mb-8 text-center">
-                <button onclick="toggleFullscreen()" class="apple-btn text-white font-bold py-2 px-4 rounded-full text-md shadow-lg">
-                    Play in Fullscreen
-                </button>
-            </div>
-            
             <h2 class="text-3xl font-bold mt-12 mb-6 text-gray-800 pl-3">Game Videos</h2>
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="game-container">
@@ -518,19 +512,6 @@
             gameFrame.setAttribute('scrolling', 'no');
             gameFrame.setAttribute('frameborder', '0');
             gameFrame.setAttribute('allow', 'fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
-        }
-        
-        function toggleFullscreen() {
-            const gameFrame = document.getElementById('gameFrame');
-            if (gameFrame.requestFullscreen) {
-                gameFrame.requestFullscreen();
-            } else if (gameFrame.mozRequestFullScreen) {
-                gameFrame.mozRequestFullScreen();
-            } else if (gameFrame.webkitRequestFullscreen) {
-                gameFrame.webkitRequestFullscreen();
-            } else if (gameFrame.msRequestFullscreen) {
-                gameFrame.msRequestFullscreen();
-            }
         }
     </script>
     

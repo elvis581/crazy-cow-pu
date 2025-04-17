@@ -508,33 +508,16 @@
     
     <!-- Game Loading Script -->
     <script>
-        const zonesURL = "https://cdn.jsdelivr.net/gh/gn-math/assets@main/zones.json";
-        const coverURL = "https://cdn.jsdelivr.net/gh/gn-math/covers@main";
-        const htmlURL = "https://cdn.jsdelivr.net/gh/gn-math/html@main";
-        const gameId = 164; // Crazy Cattle 3D ID
-        
-        async function loadGame() {
-            try {
-                const response = await fetch(zonesURL);
-                const zones = await response.json();
-                const gameData = zones.find(zone => zone.id === gameId);
-                
-                if (gameData) {
-                    const url = gameData.url.replace("{COVER_URL}", coverURL).replace("{HTML_URL}", htmlURL);
-                    const gameFrame = document.getElementById('gameFrame');
-                    
-                    fetch(url)
-                        .then(response => response.text())
-                        .then(html => {
-                            gameFrame.contentDocument.open();
-                            gameFrame.contentDocument.write(html);
-                            gameFrame.contentDocument.close();
-                        })
-                        .catch(error => console.error("Failed to load game:", error));
-                }
-            } catch (error) {
-                console.error("Error loading game:", error);
-            }
+        function loadGame() {
+            const gameFrame = document.getElementById('gameFrame');
+            
+            // 尝试不同的游戏URL路径
+            gameFrame.src = "https://crazy-cattle-3d.com/";
+            
+            // 添加必要的属性
+            gameFrame.setAttribute('scrolling', 'no');
+            gameFrame.setAttribute('frameborder', '0');
+            gameFrame.setAttribute('allow', 'fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
         }
         
         function toggleFullscreen() {

@@ -187,9 +187,19 @@
             <div class="game-container">
                 <iframe id="gameFrame" 
                     style="position:absolute; top:0; left:0; width:100%; height:100%; border:2px solid var(--apple-blue); border-radius:12px;" 
-                    allowfullscreen>
+                    allowfullscreen
+                    allow="autoplay; fullscreen; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    scrolling="no"
+                    frameborder="0"
+                    sandbox="allow-same-origin allow-scripts allow-popups allow-forms allow-top-navigation">
                 </iframe>
             </div>
+            
+            <button 
+                onclick="toggleFullscreen()" 
+                style="display:block; margin:15px auto; background-color:var(--apple-blue); color:white; border:none; padding:10px 20px; border-radius:4px; cursor:pointer; font-size:16px; font-weight:bold;">
+                Play in Fullscreen
+            </button>
             
             <h2 class="text-3xl font-bold mt-12 mb-6 text-gray-800 pl-3">Game Videos</h2>
             <div class="grid md:grid-cols-2 gap-6">
@@ -504,14 +514,87 @@
     <script>
         function loadGame() {
             const gameFrame = document.getElementById('gameFrame');
+            const urls = [
+                "https://crazy-cattle3d.org/game/crazycattle3d/",
+                "https://crazy-cattle-3d.com/",
+                "https://crazycattle3d.org/",
+                "https://crazycattle3d.org/game/",
+                "https://www.crazycattle3d.org/game/crazycattle3d/"
+            ];
             
-            // 尝试不同的游戏URL路径
-            gameFrame.src = "https://crazy-cattle3d.org/game/crazycattle3d/";
+            let currentUrlIndex = 0;
+            let loadTimeout;
+            
+            function tryLoadGame() {
+                if (currentUrlIndex < urls.length) {
+                    console.log("尝试加载游戏URL: " + urls[currentUrlIndex]);
+                    
+                    // 设置超时检测
+                    clearTimeout(loadTimeout);
+                    loadTimeout = setTimeout(function() {
+                        console.error("加载超时: " + urls[currentUrlIndex-1]);
+                        tryLoadGame(); // 尝试下一个URL
+                    }, 5000); // 5秒超时
+                    
+                    gameFrame.src = urls[currentUrlIndex];
+                    currentUrlIndex++;
+                } else {
+                    console.error("所有游戏URL都加载失败");
+                    // 显示一个错误消息给用户
+                    const errorContainer = document.createElement('div');
+                    errorContainer.style.position = 'absolute';
+                    errorContainer.style.top = '50%';
+                    errorContainer.style.left = '50%';
+                    errorContainer.style.transform = 'translate(-50%, -50%)';
+                    errorContainer.style.backgroundColor = 'rgba(0,0,0,0.7)';
+                    errorContainer.style.padding = '20px';
+                    errorContainer.style.borderRadius = '10px';
+                    errorContainer.style.color = 'white';
+                    errorContainer.style.textAlign = 'center';
+                    errorContainer.style.zIndex = '10';
+                    errorContainer.innerHTML = `
+                        <h3 style="margin-bottom:10px;">游戏加载失败</h3>
+                        <p>请检查您的网络连接或稍后再试</p>
+                        <button onclick="loadGame()" style="margin-top:15px; padding:8px 15px; background-color:var(--apple-blue); border:none; color:white; border-radius:4px; cursor:pointer;">重试</button>
+                    `;
+                    
+                    // 清除iframe内容
+                    gameFrame.src = 'about:blank';
+                    
+                    // 添加错误消息
+                    gameFrame.parentNode.appendChild(errorContainer);
+                }
+            }
             
             // 添加必要的属性
             gameFrame.setAttribute('scrolling', 'no');
             gameFrame.setAttribute('frameborder', '0');
             gameFrame.setAttribute('allow', 'fullscreen; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+            
+            // 监听加载完成事件
+            gameFrame.onload = function() {
+                // 只有当内容成功加载时才清除超时
+                if (gameFrame.src !== 'about:blank') {
+                    clearTimeout(loadTimeout);
+                    console.log("游戏加载成功: " + gameFrame.src);
+                }
+            };
+            
+            // 开始尝试第一个URL
+            tryLoadGame();
+        }
+        
+        function toggleFullscreen() {
+            const gameFrame = document.getElementById('gameFrame');
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.mozRequestFullScreen) {
+                gameFrame.mozRequestFullScreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
         }
     </script>
     
